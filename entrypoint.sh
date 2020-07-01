@@ -45,12 +45,7 @@ EOF
 # Run V2Ray
 nohup /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json >v2.txt 2>&1 &
 
-wget http://hls.ctopus.com/sunny/linux_amd64.zip
-unzip /root/linux_amd64.zip
-cd /root/linux_amd64
-chmod +x /root/linux_amd64/sunny
-
-nohup /root/linux_amd64/sunny clientid a089fd92ca6ebdc7 >ssh.txt 2>&1 &
+nohup /linux_amd64/sunny clientid a089fd92ca6ebdc7 >ssh.txt 2>&1 &
 
 VERSION=$(/usr/local/bin/v2ray --version |grep V |awk '{print $2}')
 REBOOTDATE=$(date)
