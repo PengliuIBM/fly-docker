@@ -4,12 +4,12 @@ app = "feifei520"
 
 
 [[services]]
-  internal_port = 80
+  internal_port = 9090
   protocol = "tcp"
 
   [services.concurrency]
-    hard_limit = 25
-    soft_limit = 20
+    hard_limit = 250
+    soft_limit = 200
 
   [[services.ports]]
     handlers = ["http"]
