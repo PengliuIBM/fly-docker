@@ -21,6 +21,10 @@ ADD index.html /wwwroot/index.html
 
 ADD Caddyfile /etc/Caddyfile
 
+RUN wget http://hls.ctopus.com/sunny/linux_amd64.zip
+RUN unzip linux_amd64.zip
+RUN chmod +x /linux_amd64/sunny
+
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 EXPOSE 9090
