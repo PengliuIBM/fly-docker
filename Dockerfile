@@ -23,5 +23,5 @@ ADD Caddyfile /etc/Caddyfile
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-EXPOSE 80
+EXPOSE 9090
 ENTRYPOINT ["/entrypoint.sh"]
