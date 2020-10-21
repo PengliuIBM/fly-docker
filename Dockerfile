@@ -14,8 +14,12 @@ RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 RUN sed -i "s/#PasswordAuthentication yes/PasswordAuthentication yes/g" /etc/ssh/sshd_config
 RUN echo root:123456789 |chpasswd root
 
-RUN wget -P /usr/bin https://gd.cnm.workers.dev/amd64/caddy
+#RUN wget -P /usr/bin https://gd.cnm.workers.dev/amd64/caddy
+#RUN chmod +x /usr/bin/caddy
+RUN wget -P /usr/bin https://github.com/caddyserver/caddy/releases/download/v1.0.4/caddy_v1.0.4_linux_amd64.tar.gz
+RUN tar -zxvf /usr/bin/caddy_v1.0.4_linux_amd64.tar.gz -C /usr/bin
 RUN chmod +x /usr/bin/caddy
+
 RUN mkdir /wwwroot
 ADD index.html /wwwroot/index.html
 
